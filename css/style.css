@@ -1,0 +1,142 @@
+@font-face {
+  font-family: 'Ancizar Serif';
+  src: url('../font/AncizarSerif-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: 'Ancizar Serif', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header .header-title{
+  margin-block-start: 0.1em;
+  margin-block-end: 0.01em;
+}
+
+header .header-description{
+  margin-block-start: 0.01em;
+  margin-block-end: 0.1em;
+  color: #555;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.gallery-item .gallery-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.gallery-item .gallery-img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #eee;
+}
+
+.gallery-description {
+  padding: 10px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.gallery-item .gallery-img,
+.gallery-item .gallery-description {
+  transition: transform 0.2s ease;
+}
+
+.gallery-item .gallery-img:hover,
+.gallery-item .gallery-description:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.gallery-item .description .description-title {
+  color: #222222;
+  margin-bottom: 0.3em;
+}
+
+.gallery-item .description .description-description {
+  color: #555555;
+  line-height: 1.4;
+  margin-bottom: 0.5em;
+}
+
+.gallery-item .description-link{
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  header {
+    background: #2a2a2a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .header-description{
+    color: #b0b0b0;
+  }
+
+  nav a {
+    color: #e0e0e0;
+  }
+
+  .gallery-item .gallery-img {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
+
+  footer {
+    background: #2a2a2a;
+    color: #e0e0e0;
+  }
+
+  .gallery-description {
+    color: #b0b0b0;
+  }
+
+  .gallery-item .description .description-title {
+    color: #eeeeee;
+  }
+
+  .gallery-item .description .description-description {
+    color: #b0b0b0;
+  }
+}
