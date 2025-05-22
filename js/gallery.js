@@ -2,11 +2,12 @@ const galleryContainer = document.getElementById('gallery-container');
 const galleryLoadingElements = document.querySelectorAll('.gallery-loading');
 const INITIAL_LOAD_COUNT = 8;
 const LOAD_MORE_COUNT = 8;
-const BATCH_SEARCH_STEP = 10;
+const MAX_GALLERY_INDEX = 1000; 
 
 let lastFoundEntry = 0;
 let currentLoadedCount = 0;
 let isLoading = false;
+let loadingSentinel = null;
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -56,7 +57,7 @@ async function appendGalleryItem(item) {
 async function fetchAndAppendItems(startIdx, count) {
     isLoading = true;
     let itemsToLoad = [];
-    const actualEndIdx = Math.max(0, startIdx - count + 1);
+    const actualEndIdx = Math.max(1, startIdx - count + 1);
 
     for (let i = startIdx; i >= actualEndIdx; i--) {
         if (i < 1) break;
@@ -67,13 +68,13 @@ async function fetchAndAppendItems(startIdx, count) {
         try {
             const htmlResponse = await fetch(htmlPath);
             if (!htmlResponse.ok) {
-                break;
+                break; 
             }
 
             const htmlContent = await htmlResponse.text();
             itemsToLoad.push({ htmlContent, imgPath, index: i });
         } catch (e) {
-            console.log(`${i} : fetchAndAppendItems error end`);
+            console.error(`Error fetching item ${i}:`, e);
             break;
         }
     }
@@ -88,51 +89,19 @@ async function fetchAndAppendItems(startIdx, count) {
 
 async function findLastExistingEntry() {
     let tempLastEntry = 0;
-    let foundBatch = false;
 
-    console.log(`${tempLastEntry} : findLastExistingEntry start`);
-    
-    for (let i = BATCH_SEARCH_STEP; i <= 999; i += BATCH_SEARCH_STEP) {
+    for (let i = 1; i <= MAX_GALLERY_INDEX; i++) {
         const htmlPath = `html/gallery/${i}.html`;
         try {
             const response = await fetch(htmlPath, { method: 'HEAD' });
             if (response.ok) {
                 tempLastEntry = i;
-                foundBatch = true;
             } else {
-                if (foundBatch) {
-                    for (let j = i - 1; j > tempLastEntry; j--) {
-                        const subPath = `html/gallery/${j}.html`;
-                        try {
-                            const subResponse = await fetch(subPath, { method: 'HEAD' });
-                            if (subResponse.ok) {
-                                tempLastEntry = j;
-                                return tempLastEntry;
-                            }
-                        } catch (e) {
-                            console.log(`${j} : findLastExistingEntry j error end`);
-                        }
-                    }
-                }
-                return tempLastEntry;
+                break; 
             }
         } catch (e) {
-            console.log(`${i} : findLastExistingEntry i error end`);
-            break;
-        }
-    }
-    console.log(`${tempLastEntry} : findLastExistingEntry tempLastEntry error end`);
-    if (tempLastEntry < 999) {
-        for (let j = 999; j > tempLastEntry; j--) {
-            const subPath = `html/gallery/${j}.html`;
-            try {
-                const subResponse = await fetch(subPath, { method: 'HEAD' });
-                if (subResponse.ok) {
-                    tempLastEntry = j;
-                    break;
-                }
-            } catch (e) {
-            }
+            console.error(`Error checking existence of ${htmlPath}:`, e);
+            break; 
         }
     }
     return tempLastEntry;
@@ -140,6 +109,11 @@ async function findLastExistingEntry() {
 
 async function loadMoreGalleryItems() {
     if (isLoading || currentLoadedCount >= lastFoundEntry) {
+        if (currentLoadedCount >= lastFoundEntry && loadingSentinel) {
+            observer.unobserve(loadingSentinel);
+            loadingSentinel.remove();
+            loadingSentinel = null;
+        }
         return;
     }
 
@@ -150,9 +124,26 @@ async function loadMoreGalleryItems() {
 
     isLoading = false;
 
-    if (currentLoadedCount >= lastFoundEntry) {
-        observer.disconnect();
+    updateLoadingSentinel();
+}
+
+function updateLoadingSentinel() {
+    if (loadingSentinel) {
+        observer.unobserve(loadingSentinel);
+        loadingSentinel.remove();
     }
+
+    if (currentLoadedCount >= lastFoundEntry) {
+        return;
+    }
+
+    loadingSentinel = document.createElement('div');
+    loadingSentinel.id = 'loading-sentinel';
+    loadingSentinel.style.height = '1px';
+    loadingSentinel.style.width = '100%';
+    
+    galleryContainer.append(loadingSentinel);
+    observer.observe(loadingSentinel);
 }
 
 (async () => {
@@ -165,7 +156,7 @@ async function loadMoreGalleryItems() {
 
     await fetchAndAppendItems(lastFoundEntry, INITIAL_LOAD_COUNT);
 
-    observer.observe(galleryContainer);
+    updateLoadingSentinel();
 
     galleryLoadingElements.forEach(element => element.remove());
 })();
