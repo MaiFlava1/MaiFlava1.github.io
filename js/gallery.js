@@ -1,8 +1,9 @@
 const galleryContainer = document.getElementById('gallery-container');
 const galleryLoadingElements = document.querySelectorAll('.gallery-loading');
-const INITIAL_LOAD_COUNT = 8;
-const LOAD_MORE_COUNT = 8;
+const INITIAL_LOAD_COUNT = 4;
+const LOAD_MORE_COUNT = 1;
 const MAX_GALLERY_INDEX = 1000; 
+const BATCH_SEARCH_STEP = 10;
 
 let lastFoundEntry = 0;
 let currentLoadedCount = 0;
@@ -74,7 +75,6 @@ async function fetchAndAppendItems(startIdx, count) {
             const htmlContent = await htmlResponse.text();
             itemsToLoad.push({ htmlContent, imgPath, index: i });
         } catch (e) {
-            console.error(`Error fetching item ${i}:`, e);
             break;
         }
     }
@@ -90,20 +90,37 @@ async function fetchAndAppendItems(startIdx, count) {
 async function findLastExistingEntry() {
     let tempLastEntry = 0;
 
-    for (let i = 1; i <= MAX_GALLERY_INDEX; i++) {
+    for (let i = BATCH_SEARCH_STEP; i <= MAX_GALLERY_INDEX; i += BATCH_SEARCH_STEP) {
         const htmlPath = `html/gallery/${i}.html`;
         try {
             const response = await fetch(htmlPath, { method: 'HEAD' });
             if (response.ok) {
                 tempLastEntry = i;
             } else {
-                break; 
+                break;
             }
         } catch (e) {
-            console.error(`Error checking existence of ${htmlPath}:`, e);
-            break; 
+            break;
         }
     }
+    
+    let searchStart = tempLastEntry === 0 ? BATCH_SEARCH_STEP - 1 : tempLastEntry;
+    searchStart = Math.min(searchStart, MAX_GALLERY_INDEX);
+
+    let searchEnd = tempLastEntry === 0 ? 1 : tempLastEntry - BATCH_SEARCH_STEP + 1;
+    searchEnd = Math.max(1, searchEnd);
+
+    for (let i = searchStart; i >= searchEnd; i--) {
+        const htmlPath = `html/gallery/${i}.html`;
+        try {
+            const response = await fetch(htmlPath, { method: 'HEAD' });
+            if (response.ok) {
+                return i;
+            }
+        } catch (e) {
+        }
+    }
+
     return tempLastEntry;
 }
 
