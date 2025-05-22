@@ -73,6 +73,7 @@ async function fetchAndAppendItems(startIdx, count) {
             const htmlContent = await htmlResponse.text();
             itemsToLoad.push({ htmlContent, imgPath, index: i });
         } catch (e) {
+            console.log(`${i} : fetchAndAppendItems error end`);
             break;
         }
     }
@@ -89,6 +90,8 @@ async function findLastExistingEntry() {
     let tempLastEntry = 0;
     let foundBatch = false;
 
+    console.log(`${tempLastEntry} : findLastExistingEntry start`);
+    
     for (let i = BATCH_SEARCH_STEP; i <= 999; i += BATCH_SEARCH_STEP) {
         const htmlPath = `html/gallery/${i}.html`;
         try {
@@ -107,15 +110,18 @@ async function findLastExistingEntry() {
                                 return tempLastEntry;
                             }
                         } catch (e) {
+                            console.log(`${j} : findLastExistingEntry j error end`);
                         }
                     }
                 }
                 return tempLastEntry;
             }
         } catch (e) {
+            console.log(`${i} : findLastExistingEntry i error end`);
             break;
         }
     }
+    console.log(`${tempLastEntry} : findLastExistingEntry tempLastEntry error end`);
     if (tempLastEntry < 999) {
         for (let j = 999; j > tempLastEntry; j--) {
             const subPath = `html/gallery/${j}.html`;
