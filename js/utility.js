@@ -20,3 +20,7 @@ function copyEmail() {
             showCustomAlert('Error', 'Failed to copy email: ' + err.message);
         });
 }
+
+function meowAlert(){
+  showCustomAlert('Meow', 'Meow, MeowMeowMeow, MeowMeow');
+}
