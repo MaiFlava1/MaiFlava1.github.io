@@ -5,6 +5,13 @@
   font-display: swap;
 }
 
+.emoji {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1em;
+  line-height: 1;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -25,17 +32,35 @@ header {
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center
 }
 
 header .header-profile{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+ 
+header .header-right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+header .header-profile-image{
   width:100px;
   height:auto;
   border-radius: 50%;
   margin-bottom: 10px;
   transition: transform 0.3s;
+  margin-right: 20px;
 }
 
-header .header-profile:hover{
+header .header-profile-image:hover{
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -63,6 +88,11 @@ header .header-menu a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+}
+
+header .header-menu a img{
+  height: 1em;
+  margin-right: 5px;
 }
 
 header .header-menu li{
