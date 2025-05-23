@@ -34,7 +34,7 @@ header {
   background: #fff;
   padding: 0px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -65,7 +65,7 @@ header .header-profile-image{
   margin-bottom: 10px;
   transition: transform 0.3s;
   margin-right: 20px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 12px rgba(0,0,0, 0.5);
 }
 
 header .header-profile-image:hover{
@@ -90,7 +90,7 @@ header .header-menu{
   width: 100%;
   background: #fff;
   margin-bottom: 20px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 0px 12px rgba(0,0,0,0.2);
 }
 
 header .header-menu ul {
@@ -160,6 +160,7 @@ footer {
   padding: 5px;
   background: #eee;
   flex-shrink: 0;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
 }
 
 .gallery-item {
