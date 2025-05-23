@@ -33,10 +33,7 @@ async function appendGalleryItem(item, isHighlightItem = false) {
         wrapper.classList.add('gallery-highlight');
     }
 
-    wrapper.innerHTML = `
-        <img class="gallery-img" src="${item.imgPath}" alt="Artwork ${item.index}" style="cursor:pointer;" />
-        <div class="gallery-description" style="cursor:pointer;">${item.htmlContent}</div>
-    `;
+    wrapper.innerHTML = `<div class="gallery-description" style="cursor:pointer;">${item.htmlContent}</div>`;
 
     galleryContainer.append(wrapper);
 
@@ -47,17 +44,9 @@ async function appendGalleryItem(item, isHighlightItem = false) {
     const aTag = tempDiv.querySelector('a[href]');
     if (aTag) {
         linkUrl = aTag.href;
-    } else {
-        const dataLink = tempDiv.querySelector('[data-link]');
-        if (dataLink) {
-            linkUrl = dataLink.getAttribute('data-link');
-        }
     }
 
     if (linkUrl) {
-        wrapper.querySelector('.gallery-img').addEventListener('click', () => {
-            window.open(linkUrl, '_blank', 'noopener');
-        });
         wrapper.querySelector('.gallery-description').addEventListener('click', () => {
             window.open(linkUrl, '_blank', 'noopener');
         });
@@ -73,7 +62,6 @@ async function fetchAndAppendItems(startIdx, count, basePath, isHighlight = fals
         if (i < 1) break;
 
         const htmlPath = `${basePath}/${i}.html`;
-        const imgPath = `${basePath}/${i}.png`;
 
         try {
             const htmlResponse = await fetch(htmlPath);
@@ -82,7 +70,7 @@ async function fetchAndAppendItems(startIdx, count, basePath, isHighlight = fals
             }
 
             const htmlContent = await htmlResponse.text();
-            itemsToLoad.push({ htmlContent, imgPath, index: i });
+            itemsToLoad.push({ htmlContent, index: i });
         } catch (e) {
             break;
         }
