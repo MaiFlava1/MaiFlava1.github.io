@@ -106,6 +106,7 @@ footer {
   padding: 10px 0;
   font-size: 0.9rem;
   color: #555;
+  padding: 10px; 
 }
 
 .gallery-item .gallery-img,
@@ -190,6 +191,11 @@ footer {
     background-color: #0056b3;
 }
 
+.gallery-highlight {
+    border: 3px solid #777;
+    border-radius: 10px;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #1a1a1a;
@@ -263,5 +269,9 @@ footer {
 
   .custom-alert-content button:hover {
       background-color: #6a6a6a;
+  }
+
+  .gallery-highlight {
+    border: 3px solid #bbb;
   }
 }
