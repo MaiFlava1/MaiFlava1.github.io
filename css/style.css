@@ -89,6 +89,7 @@ header .header-menu{
   width: 100%;
   background: #ddd;
   margin: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
 header .header-menu ul {
