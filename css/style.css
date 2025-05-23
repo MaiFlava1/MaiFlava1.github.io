@@ -47,7 +47,7 @@ header .header-profile{
   align-items:end;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-left: 10%;
+  padding-left: 100px;
   margin-top: 30px;
 }
  
