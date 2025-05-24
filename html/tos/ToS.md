@@ -65,7 +65,7 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
     - User may not redistribute the original, unaltered content as user's own or without significant modification.
 
 7.  **Modification Limitations:**
-    - While user may create derived content (as detailed in Section 4), user may not modify the original content in a way that misrepresents the author's intent or harms the author's reputation.
+    - While user may create derived content (as detailed in Section 5), user may not modify the original content in a way that misrepresents the author's intent or harms the author's reputation.
 
 ---
 
