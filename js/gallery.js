@@ -90,40 +90,54 @@ async function fetchAndAppendItems(startIdx, count, basePath, isHighlight = fals
 }
 
 async function findLastExistingEntry(basePath) {
-    let tempLastEntry = 0;
+    let lastFoundBatch = 0;
+    let firstMissingBatch = MAX_GALLERY_INDEX + BATCH_SEARCH_STEP;
 
     for (let i = BATCH_SEARCH_STEP; i <= MAX_GALLERY_INDEX; i += BATCH_SEARCH_STEP) {
         const htmlPath = `${basePath}/${i}.html`;
         try {
             const response = await fetch(htmlPath, { method: 'HEAD' });
             if (response.ok) {
-                tempLastEntry = i;
+                lastFoundBatch = i;
             } else {
+                firstMissingBatch = i;
                 break;
             }
         } catch (e) {
+            firstMissingBatch = i;
             break;
         }
     }
 
-    let searchStart = tempLastEntry === 0 ? BATCH_SEARCH_STEP - 1 : tempLastEntry;
-    searchStart = Math.min(searchStart, MAX_GALLERY_INDEX);
+    let low = Math.max(1, lastFoundBatch + 1);
+    let high = Math.min(MAX_GALLERY_INDEX, firstMissingBatch - 1);
 
-    let searchEnd = tempLastEntry === 0 ? 1 : tempLastEntry - BATCH_SEARCH_STEP + 1;
-    searchEnd = Math.max(1, searchEnd);
+    if (lastFoundBatch === 0) {
+        low = 1;
+        high = Math.min(MAX_GALLERY_INDEX, firstMissingBatch - 1);
+    } else if (lastFoundBatch === MAX_GALLERY_INDEX) {
+        return MAX_GALLERY_INDEX;
+    }
 
-    for (let i = searchStart; i >= searchEnd; i--) {
-        const htmlPath = `${basePath}/${i}.html`;
+    let finalLastFound = lastFoundBatch;
+
+    while (low <= high) {
+        const mid = Math.floor((low + high) / 2);
+        const htmlPath = `${basePath}/${mid}.html`;
         try {
             const response = await fetch(htmlPath, { method: 'HEAD' });
             if (response.ok) {
-                return i;
+                finalLastFound = mid;
+                low = mid + 1;
+            } else {
+                high = mid - 1;
             }
         } catch (e) {
+            high = mid - 1;
         }
     }
 
-    return tempLastEntry;
+    return finalLastFound;
 }
 
 async function loadMoreHighlightItems() {
@@ -203,4 +217,4 @@ function updateLoadingSentinel() {
     updateLoadingSentinel();
 
     galleryLoadingElements.forEach(element => element.remove());
-})();   
+})();
