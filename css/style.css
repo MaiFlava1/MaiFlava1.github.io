@@ -166,6 +166,20 @@ footer {
 .gallery-item {
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateX(20%) rotate(10deg);
+  animation: appear 0.5s forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateX(20%) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
 }
 
 .gallery-item .gallery-description {
