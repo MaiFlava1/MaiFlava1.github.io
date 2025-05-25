@@ -104,7 +104,7 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
 
 ---
 
-#### **5. Derived Content**
+### **5. Derived Content**
 
 1.  **Separation of Licenses:**
     - When creating derived content, the original content's license still applies to any elements taken from it.
