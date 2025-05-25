@@ -13,7 +13,7 @@
   transform: translatey(-0.1em);
   height: 1em;
   weight: 1em;
-  margin-right: 5px;
+  margin-right: 2px;
 }
 
 html, body {
@@ -96,8 +96,9 @@ header .header-menu ul {
   list-style: none;
   display: flex;
   justify-content:left;
-  gap: 3%;
-  padding-inline-start: 30px;
+  gap:2%;
+  padding-inline-start: 2%;
+  color: #BBB;
 }
 
 header .header-menu a {
@@ -327,6 +328,10 @@ footer {
   header .header-menu{
     background: #222;
   }
+  header .header-menu ul {
+    color: #444;
+  }
+
 
   header .header-menu a {
     color: #e0e0e0;
