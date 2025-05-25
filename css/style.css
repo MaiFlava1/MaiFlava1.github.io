@@ -97,7 +97,7 @@ header .header-menu ul {
   display: flex;
   justify-content:left;
   gap: 3%;
-  padding-inline-start:3%;
+  padding-inline-start: 30px;
 }
 
 header .header-menu a {
