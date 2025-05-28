@@ -4,7 +4,7 @@
 
 ### **Overview**
 
-By using content created by **MaiFlava** ("the author"), user agrees to the following terms:
+By using content created by MaiFlava ("the author"), user agrees to the following terms:
 
 - ❌ **Prohibited Uses**:
   - AI training or development
@@ -27,7 +27,7 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
 ### **1. General Terms**
 
 1.  **Author:**
-    - The author referred to in this document is **MaiFlava**.
+    - The author referred to in this document is MaiFlava.
 
 2.  **User:**
     - User refers to any individual or entity who accesses, uses, or distributes the author's content.
@@ -90,7 +90,7 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
 ### **4. Disclaimer**
 
 1.  **No Warranty:**
-    - All content provided by the author is offered **"as is"** without any warranties, express or implied.
+    - All content provided by the author is offered as is without any warranties, express or implied.
     - This includes, but is not limited to, warranties of merchantability, fitness for a particular purpose, and non-infringement.
 
 2.  **Limitation of Liability:**
@@ -117,12 +117,12 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
     - The author of the derived content holds the license for any new elements they introduce, such as style, colors, and unique modifications.
 
 2.  **Joint License Compliance:**
-    - Any usage of derived content must comply with **both** the original content's license and the derived content's license.
+    - Any usage of derived content must comply with both the original content's license and the derived content's license.
     - Users must adhere to the restrictions and permissions outlined in both licenses.
 
 3.  **Conflict Resolution:**
     - If there is a conflict between the original and derived content licenses, both licenses remain valid but must be followed in their respective scopes.
-    - Users seeking to use derived content must obtain necessary permissions from **both** rights holders if required.
+    - Users seeking to use derived content must obtain necessary permissions from both rights holders if required.
 
 4.  **Example Scenarios:**
     - If user create fan art of a character, the character’s original rights holder maintains their license over the design and concept. User's unique artistic expression (style, color choices, etc.) falls under user's own license. However, the resulting fan art is bound by both licenses.
