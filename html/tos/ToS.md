@@ -40,7 +40,7 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
     - All content provided under the author is subject to the provisions outlined in this Terms of Service.
 
 5.  **Acceptance of Terms:**
-    - By accessing, using, or distributing the author’s content, user agree to comply with these terms.
+    - By accessing, using, or distributing the author’s content, user agrees to comply with these terms.
 
 6.  **Amendment of Terms**
     -  Terms may be modified; continued use implies agreement.
@@ -68,7 +68,7 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
     - User may not use the content for any illegal activities or in violation of any applicable laws or regulations.
 
 6.  **Redistribution of Original Content:**
-    - User may not redistribute the original, unaltered content as user's own or without significant modification.
+    - User may not redistribute the original, unaltered content as their own or without significant modification.
 
 7.  **Modification Limitations:**
     - While user may create derived content (as detailed in Section 5), user may not modify the original content in a way that misrepresents the author's intent or harms the author's reputation.
