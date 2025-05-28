@@ -43,7 +43,7 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
     - By accessing, using, or distributing the author’s content, user agree to comply with these terms.
 
 6.  **Warning**
-    - Violation of these terms may lead to legal action.
+    - Violation of these terms may lead to legal action, including claims for damages.
 
 7.  **Amendment of Terms**
     -  Terms may be modified; continued use implies agreement.
