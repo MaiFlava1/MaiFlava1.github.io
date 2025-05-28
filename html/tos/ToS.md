@@ -67,10 +67,7 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
 5.  **Illegal Activities:**
     - User may not use the content for any illegal activities or in violation of any applicable laws or regulations.
 
-6.  **Redistribution of Original Content:**
-    - User may not redistribute the original, unaltered content as their own or without significant modification.
-
-7.  **Modification Limitations:**
+6.  **Modification Limitations:**
     - While user may create derived content (as detailed in Section 5), user may not modify the original content in a way that misrepresents the author's intent or harms the author's reputation.
 
 ---
