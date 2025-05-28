@@ -90,7 +90,7 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
 ### **4. Disclaimer**
 
 1.  **No Warranty:**
-    - All content provided by the author is offered as is without any warranties, express or implied.
+    - All content provided by the author is offered "as is" without any warranties, express or implied.
     - This includes, but is not limited to, warranties of merchantability, fitness for a particular purpose, and non-infringement.
 
 2.  **Limitation of Liability:**
