@@ -112,18 +112,15 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
 
 ### **5. Derived Content**
 
-1.  **Separation of Licenses:**
-    - When creating derived content, the original content's license still applies to any elements taken from it.
-    - The author of the derived content holds the license for any new elements they introduce, such as style, colors, and unique modifications.
+1.  **Separation of Rights:**
+    - When creating derived content, the original creator retains copyright over any original elements used from the source material.
+    - The creator of the derived content holds copyright over the newly introduced elements, such as unique styles, color schemes, or modifications.
+    - If a derivative work is itself derived further, this principle applies recursively, requiring respect for all upstream copyrights in the chain of derivation.
 
-2.  **Joint License Compliance:**
-    - Any usage of derived content must comply with both the original content's license and the derived content's license.
-    - Users must adhere to the restrictions and permissions outlined in both licenses.
+2.  **Joint Rights Compliance:**
+    - Any use of derived content must respect both the rights of the original creator and those of the creator of the derivative work.
+    - Users must comply with all applicable terms, licenses, and conditions imposed by each rights holder.
+    - In the event of a rights conflict between original and derived content, both sets of rights remain valid and enforceable within their respective scopes.
 
-3.  **Conflict Resolution:**
-    - If there is a conflict between the original and derived content licenses, both licenses remain valid but must be followed in their respective scopes.
-    - Users seeking to use derived content must obtain necessary permissions from both rights holders if required.
-
-4.  **Example Scenarios:**
-    - If user create fan art of a character, the character’s original rights holder maintains their license over the design and concept. User's unique artistic expression (style, color choices, etc.) falls under user's own license. However, the resulting fan art is bound by both licenses.
-    - If a derivative work is created from content that is itself derived, this principle applies recursively, requiring adherence to all preceding licenses in the derivation chain.
+3.  **Example Scenarios:**
+    - If a user creates fan art of a character, the original rights holder retains copyright over the character’s design and concept. The user holds rights over their unique artistic expression (style, color choices, etc.). However, the resulting fan art is governed by both parties’ rights.
