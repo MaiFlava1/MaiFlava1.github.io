@@ -1,4 +1,4 @@
-## **Terms of Service**
+## **Terms of Service : 05-28-2025**
 ---
 ---
 
@@ -41,6 +41,12 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
 
 5.  **Acceptance of Terms:**
     - By accessing, using, or distributing the author’s content, user agree to comply with these terms.
+
+6.  **Warning**
+    - Violation of these terms may lead to legal action.
+
+7.  **Amendment of Terms**
+    -  Terms may be modified; continued use implies agreement.
 
 ---
 
