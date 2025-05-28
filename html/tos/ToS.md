@@ -123,4 +123,5 @@ By using content created by **MaiFlava** ("the author"), user agrees to the foll
     - In the event of a rights conflict between original and derived content, both sets of rights remain valid and enforceable within their respective scopes.
 
 3.  **Example Scenarios:**
-    - If a user creates fan art of a character, the original rights holder retains copyright over the character’s design and concept. The user holds rights over their unique artistic expression (style, color choices, etc.). However, the resulting fan art is governed by both parties’ rights.
+    - If a user creates fan art of a character, the original rights holder retains copyright over the character’s design and concept.
+    - The user holds rights over their unique artistic expression (style, color choices, etc.). However, the resulting fan art is governed by both parties’ rights.
