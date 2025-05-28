@@ -4,7 +4,7 @@
 
 ### **Overview**
 
-By using content created by MaiFlava ("the author"), user agrees to the following terms:
+By using content created by **MaiFlava** ("the author"), user agrees to the following terms:
 
 - ❌ **Prohibited Uses**:
   - AI training or development
